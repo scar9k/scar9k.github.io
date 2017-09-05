@@ -3,26 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>window.onload相关 | scar9k&#39;s blog</title>
+    <title>归档: 2017/9 | scar9k&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="DOM,前端" />
-    
-    <meta name="description" content="网页的有些函数必须在用户使用前提前加载才能正确地执行。如果要让函数在页面加载时执行，我们可以使用onload函数。1window.onload = functionname 如有多个函数需要在页面加载时，如果把他们依次12window.onload = function1window.onload = function2 实际执行时会只执行最后的那条指令。 解决方法112345window.onl">
-<meta name="keywords" content="DOM,前端">
-<meta property="og:type" content="article">
-<meta property="og:title" content="window.onload相关">
-<meta property="og:url" content="scar9k.github.io/2017/07/21/onload/index.html">
+    <meta name="description" content="scar9k&apos;s blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="scar9k&#39;s blog">
+<meta property="og:url" content="scar9k.github.io/archives/2017/09/index.html">
 <meta property="og:site_name" content="scar9k&#39;s blog">
-<meta property="og:description" content="网页的有些函数必须在用户使用前提前加载才能正确地执行。如果要让函数在页面加载时执行，我们可以使用onload函数。1window.onload = functionname 如有多个函数需要在页面加载时，如果把他们依次12window.onload = function1window.onload = function2 实际执行时会只执行最后的那条指令。 解决方法112345window.onl">
+<meta property="og:description" content="scar9k&apos;s blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="scar9k.github.io/2017/07/21/imgs/windowonload.jpg">
-<meta property="og:updated_time" content="2017-09-05T12:53:13.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="window.onload相关">
-<meta name="twitter:description" content="网页的有些函数必须在用户使用前提前加载才能正确地执行。如果要让函数在页面加载时执行，我们可以使用onload函数。1window.onload = functionname 如有多个函数需要在页面加载时，如果把他们依次12window.onload = function1window.onload = function2 实际执行时会只执行最后的那条指令。 解决方法112345window.onl">
-<meta name="twitter:image" content="scar9k.github.io/2017/07/21/imgs/windowonload.jpg">
+<meta name="twitter:title" content="scar9k&#39;s blog">
+<meta name="twitter:description" content="scar9k&apos;s blog">
     
 
     
@@ -148,118 +142,73 @@ var _hmt = _hmt || [];
                         <div class="main-body-header">
     <h1 class="header">
     
-    未分类
+    <i class="icon fa fa-archive"></i>归档: 2017/9
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-onload" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+                            
+
     
-        <h1 class="article-title" itemprop="name">
-        window.onload相关
-        </h1>
     
-
-            </header>
         
         
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2017/07/21/onload/" class="article-date">
-            <time datetime="2017-07-21T13:02:08.000Z" itemprop="datePublished">2017-07-21</time>
-        </a>
-    </div>
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/DOM/">DOM</a>, <a class="tag-link" href="/tags/前端/">前端</a>
-    </div>
-
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
             </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
         
+        <a href="/2017/09/02/childnodes/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../imgs/childNodes.jpg)" alt="" class="thumbnail-image"></span>
+    
+    
         
-        <div class="article-entry" itemprop="articleBody">
-            <p>网页的有些函数必须在用户使用前提前加载才能正确地执行。<br>如果要让函数在页面加载时执行，我们可以使用onload函数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.onload = functionname</div></pre></td></tr></table></figure></p>
-<p>如有多个函数需要在页面加载时，如果把他们依次<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.onload = function1</div><div class="line">window.onload = function2</div></pre></td></tr></table></figure></p>
-<p>实际执行时会只执行最后的那条指令。<br><img src="../imgs/windowonload.jpg" alt=""></p>
-<p>解决方法1<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.onload =funtion()&#123;</div><div class="line">function1();</div><div class="line">function2();</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>解决方法2<br>使用addLoadEvent()<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">addLoadEvent(function1);</div><div class="line">addLoadEvent(function2);</div></pre></td></tr></table></figure></p>
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="scar9k.github.io/2017/09/02/childnodes/">0</span>
+    
+</span>
 
-        </div>
-        <footer class="article-footer">
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
             
-    <div class="jiathis_style">
-    <span class="jiathis_txt">分享到：</span>
-    <a class="jiathis_button_qzone">QQ空间</a>
-    <a class="jiathis_button_tsina">新浪微博</a>
-    <a class="jiathis_button_tqq">腾讯微博</a>
-    <a class="jiathis_button_weixin">微信</a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-    <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<style>
-    .jiathis_style div:first-child:not(.jiadiv_01) {
-        width: auto !important;
-        border: none !important;
-    }
-    .jiathis_style .jiadiv_01 {
-        margin: 10px 0;
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .jiathis_style .jiadiv_01 div:first-child {
-        display: none;
-    }
-    .jiathis_style .jiadiv_02 {
-        padding: 7px 0 !important;
-    }
-    .jiathis_style .jiadiv_02 .jiatitle {
-        width: 85px;
-        border: none;
-        height: auto;
-        margin: 3px 10px;
-        padding: 6px 10px;
-        border-radius: 4px;
-    }
-    .jiathis_style .jiadiv_02 .jiatitle:hover {
-        border: none;
-    }
-    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
-        margin-left: 0;
-    }
-    .jiathis_style .jtico:hover {
-        opacity: 1;
-    }
-    .jiathis_style .ckepopBottom,
-    .jiathis_style .centerBottom {
-        width: auto !important;
-        padding: 5px;
-        background: #f7f7f7;
-    }
-</style>
+            </div>
+            <div class="date"><time datetime="2017-09-02T08:44:03.451Z" itemprop="datePublished">2017-09-02</time></div>
+        </div>
+        
+        <p class="article-excerpt">
+            
+layout: posttitle: childNodes , nodeType , nodeValuedate: 2017-07-21 20:22:50tags:
+- 前端
+- DOM
 
 
-
-
-        </footer>
+#childNodeschildNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。element.childNodes比如，如果我们要吧某个文档内的所有的子元素全部检索
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
+
 
 
                         </div>
@@ -304,29 +253,6 @@ var _hmt = _hmt || [];
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2017/09/02/childnodes/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            (no title)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2017/07/19/DOM/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">初识DOM</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -481,13 +407,11 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'ruoyuzhou';
     
     
-    var disqus_url = 'scar9k.github.io/2017/07/21/onload/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

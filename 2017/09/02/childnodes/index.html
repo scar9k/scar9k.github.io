@@ -3,26 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>window.onload相关 | scar9k&#39;s blog</title>
+    <title>scar9k&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="DOM,前端" />
+        <meta name="keywords" content="" />
     
-    <meta name="description" content="网页的有些函数必须在用户使用前提前加载才能正确地执行。如果要让函数在页面加载时执行，我们可以使用onload函数。1window.onload = functionname 如有多个函数需要在页面加载时，如果把他们依次12window.onload = function1window.onload = function2 实际执行时会只执行最后的那条指令。 解决方法112345window.onl">
-<meta name="keywords" content="DOM,前端">
+    <meta name="description" content="layout: posttitle: childNodes , nodeType , nodeValuedate: 2017-07-21 20:22:50tags: - 前端 - DOM   #childNodeschildNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。element.childNodes比如，如果我们要吧某个文档内的所有的子元素全部检索">
 <meta property="og:type" content="article">
-<meta property="og:title" content="window.onload相关">
-<meta property="og:url" content="scar9k.github.io/2017/07/21/onload/index.html">
+<meta property="og:title" content="scar9k&#39;s blog">
+<meta property="og:url" content="scar9k.github.io/2017/09/02/childnodes/index.html">
 <meta property="og:site_name" content="scar9k&#39;s blog">
-<meta property="og:description" content="网页的有些函数必须在用户使用前提前加载才能正确地执行。如果要让函数在页面加载时执行，我们可以使用onload函数。1window.onload = functionname 如有多个函数需要在页面加载时，如果把他们依次12window.onload = function1window.onload = function2 实际执行时会只执行最后的那条指令。 解决方法112345window.onl">
+<meta property="og:description" content="layout: posttitle: childNodes , nodeType , nodeValuedate: 2017-07-21 20:22:50tags: - 前端 - DOM   #childNodeschildNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。element.childNodes比如，如果我们要吧某个文档内的所有的子元素全部检索">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="scar9k.github.io/2017/07/21/imgs/windowonload.jpg">
-<meta property="og:updated_time" content="2017-09-05T12:53:13.834Z">
+<meta property="og:image" content="scar9k.github.io/2017/09/02/imgs/childNodes.jpg">
+<meta property="og:updated_time" content="2017-09-05T13:38:15.997Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="window.onload相关">
-<meta name="twitter:description" content="网页的有些函数必须在用户使用前提前加载才能正确地执行。如果要让函数在页面加载时执行，我们可以使用onload函数。1window.onload = functionname 如有多个函数需要在页面加载时，如果把他们依次12window.onload = function1window.onload = function2 实际执行时会只执行最后的那条指令。 解决方法112345window.onl">
-<meta name="twitter:image" content="scar9k.github.io/2017/07/21/imgs/windowonload.jpg">
+<meta name="twitter:title" content="scar9k&#39;s blog">
+<meta name="twitter:description" content="layout: posttitle: childNodes , nodeType , nodeValuedate: 2017-07-21 20:22:50tags: - 前端 - DOM   #childNodeschildNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。element.childNodes比如，如果我们要吧某个文档内的所有的子元素全部检索">
+<meta name="twitter:image" content="scar9k.github.io/2017/09/02/imgs/childNodes.jpg">
     
 
     
@@ -152,43 +151,49 @@ var _hmt = _hmt || [];
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-onload" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-childnodes" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        window.onload相关
-        </h1>
-    
-
-            </header>
         
         
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/07/21/onload/" class="article-date">
-            <time datetime="2017-07-21T13:02:08.000Z" itemprop="datePublished">2017-07-21</time>
+        <a href="/2017/09/02/childnodes/" class="article-date">
+            <time datetime="2017-09-02T08:44:03.451Z" itemprop="datePublished">2017-09-02</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/DOM/">DOM</a>, <a class="tag-link" href="/tags/前端/">前端</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>网页的有些函数必须在用户使用前提前加载才能正确地执行。<br>如果要让函数在页面加载时执行，我们可以使用onload函数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.onload = functionname</div></pre></td></tr></table></figure></p>
-<p>如有多个函数需要在页面加载时，如果把他们依次<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.onload = function1</div><div class="line">window.onload = function2</div></pre></td></tr></table></figure></p>
-<p>实际执行时会只执行最后的那条指令。<br><img src="../imgs/windowonload.jpg" alt=""></p>
-<p>解决方法1<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.onload =funtion()&#123;</div><div class="line">function1();</div><div class="line">function2();</div><div class="line">...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>解决方法2<br>使用addLoadEvent()<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">addLoadEvent(function1);</div><div class="line">addLoadEvent(function2);</div></pre></td></tr></table></figure></p>
+            <hr>
+<p>layout: post<br>title: childNodes , nodeType , nodeValue<br>date: 2017-07-21 20:22:50<br>tags:</p>
+<pre><code>- 前端
+- DOM
+</code></pre><hr>
+<p><img src="../imgs/childNodes.jpg" alt=""></p>
+<h2 id="childNodes"><a href="#childNodes" class="headerlink" title="#childNodes"></a>#childNodes</h2><p>childNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。<br>element.childNodes<br>比如，如果我们要吧某个文档内的所有的子元素全部检索出来，可以使用</p>
+<pre><code class="cpp">var body_elems = getElementsByTagName(<span class="string">"body"</span>)[<span class="number">0</span>]
+<span class="comment">/**0指的是文档搜索起始点，因为一个文档body元素只有一个所以为0**/</span>
+body_elems.childNodes
+</code></pre>
+<p>如果测试该数组的length会发现有很多的子元素，因为文档树的节点类型并非元素节点一种。<br>甚至空格之类的每一样东西都是一个节点。</p>
+<h2 id="nodeType"><a href="#nodeType" class="headerlink" title="#nodeType"></a>#nodeType</h2><p>nodeType可以获取元素的类型</p>
+<pre><code class="cpp">body_elems.nodeType
+</code></pre>
+<p>得到的结果是1<br>nodeType有12种可取值<br>元素节点的值是 1<br>属性节点的值是 2<br>文本节点的值是 3</p>
+<h2 id="nodeValue"><a href="#nodeValue" class="headerlink" title="#nodeValue"></a>#nodeValue</h2><p>nodeValue可以用于获取和修改一个节点的值<br>而在使用nodeValue获取一个对象时，得到的并不是对象的文本。<br>比如有id=description的段落</p>
+<pre><code class="cpp">var description = document.getElementById(<span class="string">"description"</span>)
+alert (description.nodeValue)
+</code></pre>
+<p>得到的值是null，因为这指向的对象是一个段落，而不是段落中的文本。</p>
+<h2 id="firstChild和lastChild"><a href="#firstChild和lastChild" class="headerlink" title="#firstChild和lastChild"></a>#firstChild和lastChild</h2><p>我们可以使用childNode<br>或是firstChild和lastChild</p>
+<pre><code class="cpp">description.childnotes[<span class="number">0</span>].nodeValue
+description.firstchild.nodeValue
+</code></pre>
+<p>可以达到同样的效果</p>
 
         </div>
         <footer class="article-footer">
@@ -308,20 +313,10 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-        <a href="/2017/09/02/childnodes/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            (no title)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/07/19/DOM/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/21/onload/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">初识DOM</p>
+        <p class="article-nav-title">window.onload相关</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -481,7 +476,7 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'ruoyuzhou';
     
     
-    var disqus_url = 'scar9k.github.io/2017/07/21/onload/';
+    var disqus_url = 'scar9k.github.io/2017/09/02/childnodes/';
     
     (function() {
     var dsq = document.createElement('script');
