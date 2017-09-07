@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>初识DOM | scar9k&#39;s blog</title>
+    <title>childNodes , nodeType , nodeValue | scar9k&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="DOM,前端" />
     
-    <meta name="description" content="什么是DOM？DOM是Document Object Model（文档对象模型）DOM是一种API(应用编程接口)W3C对DOM的定义是：“一个与系统平台和编程语言无关的接口，程序和脚本可以通过这个接口动态地访问和修改文档的内容、结构、样式。”当创建了一个网页并把他加载到Web浏览器中，DOM将编写的网页文档转换成了一个文档对象。 对象JavaScript的对象可以分为三种类型。 用户定义对象（u">
+    <meta name="description" content="原生DOM中的childNodes,nodeType,nodeValuechildNodeschildNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。 element.childNodes 比如，如果我们要吧某个文档内的所有的子元素全部检索出来，可以使用 123456var body_elems = getElementsByTagName(&quot;body&quot;)[">
 <meta name="keywords" content="DOM,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识DOM">
-<meta property="og:url" content="scar9k.github.io/2017/09/02/DOM/index.html">
+<meta property="og:title" content="childNodes , nodeType , nodeValue">
+<meta property="og:url" content="scar9k.github.io/2017/07/21/childnodes/index.html">
 <meta property="og:site_name" content="scar9k&#39;s blog">
-<meta property="og:description" content="什么是DOM？DOM是Document Object Model（文档对象模型）DOM是一种API(应用编程接口)W3C对DOM的定义是：“一个与系统平台和编程语言无关的接口，程序和脚本可以通过这个接口动态地访问和修改文档的内容、结构、样式。”当创建了一个网页并把他加载到Web浏览器中，DOM将编写的网页文档转换成了一个文档对象。 对象JavaScript的对象可以分为三种类型。 用户定义对象（u">
+<meta property="og:description" content="原生DOM中的childNodes,nodeType,nodeValuechildNodeschildNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。 element.childNodes 比如，如果我们要吧某个文档内的所有的子元素全部检索出来，可以使用 123456var body_elems = getElementsByTagName(&quot;body&quot;)[">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/images/domarchitecture.png">
-<meta property="og:updated_time" content="2017-09-07T13:37:47.656Z">
+<meta property="og:image" content="/images/childNodes.jpg">
+<meta property="og:updated_time" content="2017-09-07T13:49:45.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初识DOM">
-<meta name="twitter:description" content="什么是DOM？DOM是Document Object Model（文档对象模型）DOM是一种API(应用编程接口)W3C对DOM的定义是：“一个与系统平台和编程语言无关的接口，程序和脚本可以通过这个接口动态地访问和修改文档的内容、结构、样式。”当创建了一个网页并把他加载到Web浏览器中，DOM将编写的网页文档转换成了一个文档对象。 对象JavaScript的对象可以分为三种类型。 用户定义对象（u">
-<meta name="twitter:image" content="/images/domarchitecture.png">
+<meta name="twitter:title" content="childNodes , nodeType , nodeValue">
+<meta name="twitter:description" content="原生DOM中的childNodes,nodeType,nodeValuechildNodeschildNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。 element.childNodes 比如，如果我们要吧某个文档内的所有的子元素全部检索出来，可以使用 123456var body_elems = getElementsByTagName(&quot;body&quot;)[">
+<meta name="twitter:image" content="/images/childNodes.jpg">
     
 
     
@@ -156,14 +156,14 @@ var _hmt = _hmt || [];
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-DOM" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-childnodes" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        初识DOM
+        childNodes , nodeType , nodeValue
         </h1>
     
 
@@ -173,8 +173,8 @@ var _hmt = _hmt || [];
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/09/02/DOM/" class="article-date">
-            <time datetime="2017-09-02T08:43:55.799Z" itemprop="datePublished">2017-09-02</time>
+        <a href="/2017/07/21/childnodes/" class="article-date">
+            <time datetime="2017-07-20T16:00:00.000Z" itemprop="datePublished">2017-07-21</time>
         </a>
     </div>
 
@@ -188,13 +188,31 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="什么是DOM？"><a href="#什么是DOM？" class="headerlink" title="什么是DOM？"></a>什么是DOM？</h2><p>DOM是Document Object Model（文档对象模型）<br><img src="/images/domarchitecture.png" alt=""><br>DOM是一种API(应用编程接口)<br>W3C对DOM的定义是：“一个与系统平台和编程语言无关的接口，程序和脚本可以通过这个接口动态地访问和修改文档的内容、结构、样式。”<br>当创建了一个网页并把他加载到Web浏览器中，DOM将编写的网页文档转换成了一个文档对象。</p>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>JavaScript的对象可以分为三种类型。</p>
-<p>用户定义对象（user-defined object）：自己创建的对象。<br>内建对象（native object）：内建在JavaScript语言中的对象。<br>宿主对象（host object）：由浏览器提供的对象。</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p><img src="../../imgs/module.jpg" alt=""><br>用简单点的方法说，DOM将网页转变成一个对象模型，而这个模型就像一个树形的族谱。<br>用parent（父）、child（子）、sibling（兄弟）来表示家族的成员。<br>例如 html文件是整个家族的根源的话，它可以分为 head 分支和 body 分支，那么 head 中的meta 和 title 就是兄弟关系而 head 就是它的 父辈。<br>把这些元素看成点连起来，我们就可以把一个网络想象成由各种各样的节点连接而成的。</p>
-<h2 id="获取元素节点"><a href="#获取元素节点" class="headerlink" title="获取元素节点"></a>获取元素节点</h2><p>getElementById<br>获取ID属性值的节点。<br>getElementsByTagName<br>获取某个标签的所有节点，由单复数可以看出，该方法返回的是一个对象数组。<br>getElementsByClassName<br>获取同一Class（类）的元素。<br>H5标准支持这种方法，在老的浏览器环境中可以通过函数实现相同功能。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">getElementsByClassName</span><span class="params">(node,classname)</span><span class="comment">/**node为搜索的起点，class为类名**/</span></span></div><div class="line"><span class="function"><span class="title">if</span><span class="params">(node.getElementsByClassName)</span></span>&#123;</div><div class="line">ruturn node.getElementsByClassname<span class="comment">/**原有方法有效使用原有方法**/</span></div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">var results = <span class="keyword">new</span> Array();<span class="comment">/**定义一个“结果”为新数组**/</span></div><div class="line">var elems = node.getElementsByTagName(<span class="string">"*"</span>);<span class="comment">/**把所有元素提取到elems**/</span></div><div class="line"><span class="keyword">for</span> ( var i=<span class="number">0</span>; i&lt;elems.length ; i++ ) &#123;</div><div class="line"> <span class="keyword">if</span> (elems[i].classname.indexof(classname) !=<span class="number">-1</span>)</div><div class="line">  results[results.length] = elems[i]; <span class="comment">/**输出所有的相应classname的元素到results*/</span></div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line"><span class="keyword">return</span> results;</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="获取后设置属性"><a href="#获取后设置属性" class="headerlink" title="获取后设置属性"></a>获取后设置属性</h2><p>getAttribute<br>获取指定的属性名的属性值<br>setAttribute<br>修改属性节点的值</p>
-<p>值得注意的是；通过这种方法修改属性的值后，通过浏览器查看源代码仍然是改变前的值。<br>DOM的工作模式是先加载文档的静态内容，再动态刷新。如此而来就不需要通过刷新浏览器页面来看到改变的内容了。</p>
+            <h2 id="原生DOM中的childNodes-nodeType-nodeValue"><a href="#原生DOM中的childNodes-nodeType-nodeValue" class="headerlink" title="原生DOM中的childNodes,nodeType,nodeValue"></a>原生DOM中的childNodes,nodeType,nodeValue</h2><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/images/childNodes.jpg" alt=""></h2><h2 id="childNodes"><a href="#childNodes" class="headerlink" title="childNodes"></a>childNodes</h2><p>childNodes属性是包含某一种元素的所有子元素的数组，可以用于获取任意一种元素的所有子元素。</p>
+<p>element.childNodes</p>
+<p>比如，如果我们要吧某个文档内的所有的子元素全部检索出来，可以使用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var body_elems = getElementsByTagName(<span class="string">"body"</span>)[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment">/**0指的是文档搜索起始点，因为一个文档body元素只有一个所以为0**/</span></div><div class="line"></div><div class="line">body_elems.childNodes</div></pre></td></tr></table></figure>
+<p>如果测试该数组的length会发现有很多的子元素，因为文档树的节点类型并非元素节点一种。</p>
+<p>甚至空格之类的每一样东西都是一个节点。</p>
+<hr>
+<h2 id="nodeType"><a href="#nodeType" class="headerlink" title="nodeType"></a>nodeType</h2><p>nodeType可以获取元素的类型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">body_elems.nodeType</div></pre></td></tr></table></figure>
+<p>得到的结果是1</p>
+<p>nodeType有12种可取值</p>
+<p>元素节点的值是 1</p>
+<p>属性节点的值是 2</p>
+<p>文本节点的值是 3</p>
+<hr>
+<h2 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h2><p>nodeValue可以用于获取和修改一个节点的值</p>
+<p>而在使用nodeValue获取一个对象时，得到的并不是对象的文本。</p>
+<p>比如有id=description的段落</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var description = document.getElementById(<span class="string">"description"</span>)</div><div class="line"></div><div class="line">alert (description.nodeValue)</div></pre></td></tr></table></figure>
+<p>得到的值是null，因为这指向的对象是一个段落，而不是段落中的文本。</p>
+<hr>
+<h2 id="firstChild和lastChild"><a href="#firstChild和lastChild" class="headerlink" title="firstChild和lastChild"></a>firstChild和lastChild</h2><p>我们可以使用childNode</p>
+<p>或是firstChild和lastChild</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">description.childnotes[<span class="number">0</span>].nodeValue</div><div class="line"></div><div class="line">description.firstchild.nodeValue</div></pre></td></tr></table></figure>
+<p>可以达到同样的效果</p>
 
         </div>
         <footer class="article-footer">
@@ -314,18 +332,18 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-        <a href="/2017/09/02/childnodes/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/08/21/sass/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            childNodes , nodeType , nodeValue
+            CSS预处理器概念
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2017/09/02/onload/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/07/21/onload/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
         <p class="article-nav-title">window.onload相关</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
@@ -346,7 +364,7 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/09/07/sass/" class="thumbnail">
+                            <a href="/2017/08/21/sass/" class="thumbnail">
     
     
         <span style="background-image:url(/images/sass.png)" alt="CSS预处理器概念" class="thumbnail-image"></span>
@@ -358,15 +376,15 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/09/07/sass/" class="title">CSS预处理器概念</a></p>
-                            <p class="item-date"><time datetime="2017-09-07T11:48:55.886Z" itemprop="datePublished">2017-09-07</time></p>
+                            <p class="item-title"><a href="/2017/08/21/sass/" class="title">CSS预处理器概念</a></p>
+                            <p class="item-date"><time datetime="2017-08-20T16:00:00.000Z" itemprop="datePublished">2017-08-21</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/09/02/childnodes/" class="thumbnail">
+                            <a href="/2017/07/21/childnodes/" class="thumbnail">
     
     
         <span style="background-image:url(/images/childNodes.jpg)" alt="childNodes , nodeType , nodeValue" class="thumbnail-image"></span>
@@ -378,35 +396,15 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/09/02/childnodes/" class="title">childNodes , nodeType , nodeValue</a></p>
-                            <p class="item-date"><time datetime="2017-09-02T08:44:03.451Z" itemprop="datePublished">2017-09-02</time></p>
+                            <p class="item-title"><a href="/2017/07/21/childnodes/" class="title">childNodes , nodeType , nodeValue</a></p>
+                            <p class="item-date"><time datetime="2017-07-20T16:00:00.000Z" itemprop="datePublished">2017-07-21</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/09/02/DOM/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/domarchitecture.png)" alt="初识DOM" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/09/02/DOM/" class="title">初识DOM</a></p>
-                            <p class="item-date"><time datetime="2017-09-02T08:43:55.799Z" itemprop="datePublished">2017-09-02</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/09/02/onload/" class="thumbnail">
+                            <a href="/2017/07/21/onload/" class="thumbnail">
     
     
         <span style="background-image:url(/images/windowonload.jpg)" alt="window.onload相关" class="thumbnail-image"></span>
@@ -418,15 +416,35 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/09/02/onload/" class="title">window.onload相关</a></p>
-                            <p class="item-date"><time datetime="2017-09-02T08:43:40.598Z" itemprop="datePublished">2017-09-02</time></p>
+                            <p class="item-title"><a href="/2017/07/21/onload/" class="title">window.onload相关</a></p>
+                            <p class="item-date"><time datetime="2017-07-20T16:00:00.000Z" itemprop="datePublished">2017-07-21</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/09/02/br/" class="thumbnail">
+                            <a href="/2017/07/19/DOM/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/domarchitecture.png)" alt="初识DOM" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/07/19/DOM/" class="title">初识DOM</a></p>
+                            <p class="item-date"><time datetime="2017-07-18T16:00:00.000Z" itemprop="datePublished">2017-07-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/07/15/br/" class="thumbnail">
     
     
         <span style="background-image:url(/images/brinh5.jpg)" alt="关于br在html5中的写法" class="thumbnail-image"></span>
@@ -438,8 +456,8 @@ var _hmt = _hmt || [];
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/09/02/br/" class="title">关于br在html5中的写法</a></p>
-                            <p class="item-date"><time datetime="2017-09-02T08:43:32.060Z" itemprop="datePublished">2017-09-02</time></p>
+                            <p class="item-title"><a href="/2017/07/15/br/" class="title">关于br在html5中的写法</a></p>
+                            <p class="item-date"><time datetime="2017-07-14T16:00:00.000Z" itemprop="datePublished">2017-07-15</time></p>
                         </div>
                     </li>
                 
@@ -455,7 +473,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -506,7 +524,7 @@ var _hmt = _hmt || [];
     var disqus_shortname = 'ruoyuzhou';
     
     
-    var disqus_url = 'scar9k.github.io/2017/09/02/DOM/';
+    var disqus_url = 'scar9k.github.io/2017/07/21/childnodes/';
     
     (function() {
     var dsq = document.createElement('script');
