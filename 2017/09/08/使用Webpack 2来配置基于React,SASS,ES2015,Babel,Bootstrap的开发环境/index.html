@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="转载,翻译,webpack" />
     
-    <meta name="description" content="原文链接：使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架 作者：srinivasan 译者：Scar9k 转载请注明出处。 使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境   提示：如果想使用Webpack来搭建一个开发框架推荐参靠我之前发表的文章而本文我们将了解如何将其从">
+    <meta name="description" content="原文链接：使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架 作者：srinivasan 译者：Scar9k 转载请注明出处。 使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境   提示：如果想使用Webpack来搭建一个开发框架推荐参考我之前发表的文章而本文我们将了解如何将其从">
 <meta name="keywords" content="转载,翻译,webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架">
 <meta property="og:url" content="scar9k.github.io/2017/09/08/使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境/index.html">
 <meta property="og:site_name" content="scar9k&#39;s blog">
-<meta property="og:description" content="原文链接：使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架 作者：srinivasan 译者：Scar9k 转载请注明出处。 使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境   提示：如果想使用Webpack来搭建一个开发框架推荐参靠我之前发表的文章而本文我们将了解如何将其从">
+<meta property="og:description" content="原文链接：使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架 作者：srinivasan 译者：Scar9k 转载请注明出处。 使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境   提示：如果想使用Webpack来搭建一个开发框架推荐参考我之前发表的文章而本文我们将了解如何将其从">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2017/09/08/59b18d25db745.jpeg">
-<meta property="og:updated_time" content="2017-09-08T13:36:37.925Z">
+<meta property="og:updated_time" content="2017-09-08T14:35:43.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架">
-<meta name="twitter:description" content="原文链接：使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架 作者：srinivasan 译者：Scar9k 转载请注明出处。 使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境   提示：如果想使用Webpack来搭建一个开发框架推荐参靠我之前发表的文章而本文我们将了解如何将其从">
+<meta name="twitter:description" content="原文链接：使用Webpack 2来搭建基于React,SASS,ES2015,Babel,Bootstrap的开发框架 作者：srinivasan 译者：Scar9k 转载请注明出处。 使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境   提示：如果想使用Webpack来搭建一个开发框架推荐参考我之前发表的文章而本文我们将了解如何将其从">
 <meta name="twitter:image" content="https://i.loli.net/2017/09/08/59b18d25db745.jpeg">
     
 
@@ -196,67 +196,15 @@ var _hmt = _hmt || [];
 <h1 id="使用Webpack-2来配置基于React-SASS-ES2015-Babel-Bootstrap的开发环境"><a href="#使用Webpack-2来配置基于React-SASS-ES2015-Babel-Bootstrap的开发环境" class="headerlink" title="使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境"></a>使用Webpack 2来配置基于React,SASS,ES2015,Babel,Bootstrap的开发环境</h1></blockquote>
 <p><img src="https://i.loli.net/2017/09/08/59b18d25db745.jpeg" alt="1 -8pPP-F3plVmB2xlxET8uA.jpeg"></p>
 <blockquote>
-<p>提示：如果想使用Webpack来搭建一个开发框架推荐参靠我之前发表的<a href="https://medium.com/@srinisoundar/setting-up-environment-for-react-sass-es2015-babel-with-webpack-2f77445129" target="_blank" rel="external"><strong>文章</strong></a><br>而本文我们将了解如何将其从<strong>Webpack v1</strong>移植至<strong>Webpack v2</strong></p>
+<p>提示：如果想使用Webpack来搭建一个开发框架推荐参考我之前发表的<a href="https://medium.com/@srinisoundar/setting-up-environment-for-react-sass-es2015-babel-with-webpack-2f77445129" target="_blank" rel="external"><strong>文章</strong></a><br>而本文我们将了解如何将其从<strong>Webpack v1</strong>移植至<strong>Webpack v2</strong></p>
 </blockquote>
 <font size="6"><strong>Webpack Config</strong></font><br><font size="5"><strong>Webpack module.loaders 现在由 module.rules替代</strong></font>
 
 <p>Loaders 仍然可以有效地被使用，但新的命名规则更容易理解。</p>
 <font size="5"><strong>自动加载-loader模块的拓展名的功能被移除</strong></font>
 
-<p>当我们引用loaders时我们现在不能再省略<code>-loader</code>的拓展名了。</p>
-<font size="5"><strong>关联 loaders</strong></font>
-
-<p>在使用 <strong>webpack 1</strong> 时，我们使用<code>!</code>来关联它们，但是在 <strong>webpack 2</strong> 中我们使用<code>use</code>来配置一组<strong>loaders</strong></p>
-<pre><code>const {resolve} = require(&apos;path&apos;);
-const webpack = require(&apos;webpack&apos;);
-const ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);
-module.exports = {
-    context: resolve(__dirname, &apos;src&apos;),
-    entry: [
-        &apos;./scripts/main.js&apos;
-        // app的入口
-    ],
-    output: {
-        filename: &apos;main.js&apos;,
-    },
-    devtool: &apos;source-map&apos;,
-    module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                use: [&apos;babel-loader&apos;,],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.scss$/,
-                use: [&apos;css-hot-loader&apos;].concat(ExtractTextPlugin.extract({
-                        use: [
-                            {
-                                loader: &quot;css-loader&quot; // 将CSS载入CommonJS
-                            },
-                            {
-                                loader: &quot;sass-loader&quot; // 将Sass编译成CSS
-                            }
-                        ],
-                        fallback: &quot;style-loader&quot; // 假如CSS没有被提取到时运行
-                    }
-                ))
-            },
-            {
-                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
-                use: &apos;url-loader&apos;
-            },
-        ]
-    },
-    plugins: [
-        new webpack.NamedModulesPlugin(),
-        // 当HMR有更新时在浏览器控制台调用更多可读模块名
-        // prints more  in the browser console on HMR updates
-
-        new ExtractTextPlugin({filename: &apos;styles.css&apos;, allChunks: true})
-    ],
-};
-</code></pre><font size="5"><strong>css-hot-loader</strong></font>
+<p>当我们引用loaders时我们现在不能再省略<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;font size=5&gt;**关联 loaders**&lt;/font&gt;</div><div class="line"></div><div class="line">在使用 **webpack 1** 时，我们使用```!```来关联它们，但是在 **webpack 2** 中我们使用```use```来配置一组**loaders**</div><div class="line"></div><div class="line">```cpp</div><div class="line">const &#123;resolve&#125; = require(&apos;path&apos;);</div><div class="line">const webpack = require(&apos;webpack&apos;);</div><div class="line">const ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    context: resolve(__dirname, &apos;src&apos;),</div><div class="line">    entry: [</div><div class="line">        &apos;./scripts/main.js&apos;</div><div class="line">        // the entry point of our app</div><div class="line">    ],</div><div class="line">    output: &#123;</div><div class="line">        filename: &apos;main.js&apos;,</div><div class="line">    &#125;,</div><div class="line">    devtool: &apos;source-map&apos;,</div><div class="line">    module: &#123;</div><div class="line">        rules: [</div><div class="line">            &#123;</div><div class="line">                test: /\.jsx?$/,</div><div class="line">                use: [&apos;babel-loader&apos;,],</div><div class="line">                exclude: /node_modules/</div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                test: /\.scss$/,</div><div class="line">                use: [&apos;css-hot-loader&apos;].concat(ExtractTextPlugin.extract(&#123;</div><div class="line">                        use: [</div><div class="line">                            &#123;</div><div class="line">                                loader: &quot;css-loader&quot; // translates CSS into CommonJS</div><div class="line">                            &#125;,</div><div class="line">                            &#123;</div><div class="line">                                loader: &quot;sass-loader&quot; // compiles Sass to CSS</div><div class="line">                            &#125;</div><div class="line">                        ],</div><div class="line">                        fallback: &quot;style-loader&quot; // used when css not extracted</div><div class="line">                    &#125;</div><div class="line">                ))</div><div class="line">            &#125;,</div><div class="line">            &#123;</div><div class="line">                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,</div><div class="line">                use: &apos;url-loader&apos;</div><div class="line">            &#125;,</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        new webpack.NamedModulesPlugin(),</div><div class="line">        // prints more readable module names in the browser console on HMR updates</div><div class="line"></div><div class="line">        new ExtractTextPlugin(&#123;filename: &apos;styles.css&apos;, allChunks: true&#125;)</div><div class="line">    ],</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<font size="5"><strong>css-hot-loader</strong></font>
 
 <p>从css被关联到index文件之后，使用css-hot-loader来重新加载样式的变动。</p>
 <p>你可以在github上找到整个搭建完成的<a href="https://github.com/srinisoundar/react-webpack-babel-kit" target="_blank" rel="external">react-webpack-kit</a></p>
